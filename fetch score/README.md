@@ -1,25 +1,4 @@
-# Free Cricket API 🍔
-
-Cricket API - Live Cricket Score JSON API 🏏  
-
-***PHP, Node.js and deno Cricket API was not working due to the Cricbuzz Mobile site being Fully Redesigned - The full Site Structure was Changed it's a bit complex to get data - Please Consider using this Python Cricket API Version - Breaking Changes: JSON API Structure was changed update your app or website according to the changes in JSON data***  
-
-unofficial API Data Fetched from `Cricbuzz.com`  
-
-This is an unofficial API and not Linked or Partnered with Any Brands/Company.  
-
-> **Recently we shutdown our Free API Server due to bulk API Calls Personally we Suggest you to Self Host this API on your server - instant Deploy on Vercel or create Docker Container - <https://github.com/sanwebinfo/cricket-api?tab=readme-ov-file#free-deploy->**  
-
-## How it Works? 🤔
-
-Scrape the data using `BeautifulSoup` and export a output via JSON using `Flask` micro web framework.
-
-Everything is scraped live and shown to end users in realtime.
-
-Example: **API URL 🌐**
-
-```sh
-# Copy the 5 digit code from cricbuzz Current Live Match URL 
+```
 http://127.0.0.1:5000/score?id=<Match ID>
 ```
 
