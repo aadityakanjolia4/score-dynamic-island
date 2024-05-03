@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src":"match_id.py",
+            "use":"@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src":"/(.*)", 
+            "dest":"match_id.py"
+        }
+    ]
+} 
