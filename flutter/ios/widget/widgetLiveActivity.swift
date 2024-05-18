@@ -12,7 +12,11 @@ import SwiftUI
 struct widgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
-        var value: Int
+        
+       var currentscore:Int
+       var team1Name: String
+       var team2Name: String
+       var wkts : Int
     }
 
     // Fixed non-changing properties about your activity go here!
@@ -21,34 +25,78 @@ struct widgetAttributes: ActivityAttributes {
 
 struct widgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: widgetAttributes.self) { context in
-            // Lock screen/banner UI goes here
-            VStack {
-                Text("Hello")
+        ActivityConfiguration(for: CricketMatchAttributes.self) { context in
+            // Lock screen/banner UI
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(context.state.team1Name)
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(.white)
+                    Text(context.state.team2Name)
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(.white)
+                }
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text("Score: \(context.state.currentScore)")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundColor(.yellow)
+                    Text("Wickets: \(context.state.wickets)")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundColor(.yellow)
+                }
             }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
+            .padding(.horizontal)
+            .activityBackgroundTint(Color.black.opacity(0.5))
         } dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
-                DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
-                }
-                DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
-                }
-                DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom")
-                    // more content
+                // Expanded UI
+                DynamicIslandExpandedRegion(.center) {
+                    VStack(alignment: .center) {
+                        Text("Cricket Match")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(.white)
+                        Spacer().frame(height: 24)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(context.state.team1Name)
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .foregroundColor(.white)
+                                Text(context.state.team2Name)
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .foregroundColor(.white)
+                            }
+                            Spacer()
+                            VStack(alignment: .trailing) {
+                                Text("Score: \(context.state.currentScore)")
+                                    .font(.system(size: 24, weight: .semibold))
+                                    .foregroundColor(.yellow)
+                                Text("Wickets: \(context.state.wickets)")
+                                    .font(.system(size: 24, weight: .semibold))
+                                    .foregroundColor(.yellow)
+                            }
+                        }.padding(.horizontal)
+                    }
                 }
             } compactLeading: {
-                Text("L")
+                Text(context.state.currentScore)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.yellow)
+                    .padding(.leading, 4)
             } compactTrailing: {
-                Text("T")
+                Text(context.state.wickets)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.yellow)
+                    .padding(.trailing, 4)
             } minimal: {
-                Text("Min")
+                VStack {
+                    Text("Score: \(context.state.currentScore)")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.yellow)
+                    Text("Wickets: \(context.state.wickets)")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.yellow)
+                }
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
@@ -57,8 +105,8 @@ struct widgetLiveActivity: Widget {
 }
 
 struct widgetLiveActivity_Previews: PreviewProvider {
-    static let attributes = widgetAttributes(name: "Me")
-    static let contentState = widgetAttributes.ContentState(value: 3)
+    static let attributes = StopwatchDIWidgetAttributes()
+    static let contentState = StopwatchDIWidgetAttributes.ContentState(elapsedTime: 2324234)
 
     static var previews: some View {
         attributes
