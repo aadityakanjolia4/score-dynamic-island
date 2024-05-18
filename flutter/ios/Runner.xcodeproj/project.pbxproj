@@ -10,14 +10,18 @@
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		522BBAA85B75BEC8CCE06FF2 /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D462567A4EA4C0E6ABCD27 /* Pods_RunnerTests.framework */; };
+		6C090293070A2B0ECDC4A104 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA47D17A06C203F94CBBAC91 /* Pods_Runner.framework */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
-		7B74743D2BEF9F0A008FD4D7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743C2BEF9F09008FD4D7 /* WidgetKit.framework */; };
-		7B74743F2BEF9F0A008FD4D7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743E2BEF9F0A008FD4D7 /* SwiftUI.framework */; };
-		7B7474422BEF9F0A008FD4D7 /* CricketScoreWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7474412BEF9F0A008FD4D7 /* CricketScoreWidget.swift */; };
-		7B7474452BEF9F39008FD4D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7474442BEF9F39008FD4D7 /* Assets.xcassets */; };
-		7B7474472BEF9F39008FD4D7 /* CricketScoreWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7B7474432BEF9F0B008FD4D7 /* CricketScoreWidget.intentdefinition */; };
-		7B7474482BEF9F39008FD4D7 /* CricketScoreWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7B7474432BEF9F0B008FD4D7 /* CricketScoreWidget.intentdefinition */; };
-		7B74744B2BEF9F39008FD4D7 /* CricketScoreWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B74743A2BEF9F09008FD4D7 /* CricketScoreWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7B66689F2BF8F0BD00C9D171 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743C2BEF9F09008FD4D7 /* WidgetKit.framework */; };
+		7B6668A02BF8F0BD00C9D171 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743E2BEF9F0A008FD4D7 /* SwiftUI.framework */; };
+		7B6668A32BF8F0BE00C9D171 /* widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A22BF8F0BD00C9D171 /* widgetBundle.swift */; };
+		7B6668A52BF8F0BE00C9D171 /* widgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */; };
+		7B6668A72BF8F0BE00C9D171 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A62BF8F0BE00C9D171 /* widget.swift */; };
+		7B6668AA2BF8F0FF00C9D171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B6668A92BF8F0FF00C9D171 /* Assets.xcassets */; };
+		7B6668AC2BF8F10000C9D171 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */; };
+		7B6668AD2BF8F10000C9D171 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */; };
+		7B6668B02BF8F10000C9D171 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B66689E2BF8F0B700C9D171 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
@@ -31,26 +35,26 @@
 			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
 			remoteInfo = Runner;
 		};
-		7B7474492BEF9F39008FD4D7 /* PBXContainerItemProxy */ = {
+		7B6668AE2BF8F10000C9D171 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7B7474392BEF9F09008FD4D7;
-			remoteInfo = CricketScoreWidgetExtension;
+			remoteGlobalIDString = 7B66689D2BF8F0B700C9D171;
+			remoteInfo = widgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7B74744C2BEF9F3A008FD4D7 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				7B74744B2BEF9F39008FD4D7 /* CricketScoreWidgetExtension.appex in Embed App Extensions */,
+				7B6668B02BF8F10000C9D171 /* widgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -65,22 +69,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00234A4CAC8578CFA6D2CB5E /* Pods-RunnerTests.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile.xcconfig"; sourceTree = "<group>"; };
+		0D0DA312A4D35019086852C6 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
+		311485D494A510554308D320 /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		3EF100CD390242F3AC57F9CC /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		49BE07DAE0BEE2B0805CFED3 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		7B39799A2BF3F6600017BDF6 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		7B74743A2BEF9F09008FD4D7 /* CricketScoreWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CricketScoreWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B66689E2BF8F0B700C9D171 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B6668A22BF8F0BD00C9D171 /* widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetBundle.swift; sourceTree = "<group>"; };
+		7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetLiveActivity.swift; sourceTree = "<group>"; };
+		7B6668A62BF8F0BE00C9D171 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
+		7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
+		7B6668A92BF8F0FF00C9D171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B6668AB2BF8F10000C9D171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B74743C2BEF9F09008FD4D7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7B74743E2BEF9F0A008FD4D7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		7B7474412BEF9F0A008FD4D7 /* CricketScoreWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketScoreWidget.swift; sourceTree = "<group>"; };
-		7B7474432BEF9F0B008FD4D7 /* CricketScoreWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CricketScoreWidget.intentdefinition; sourceTree = "<group>"; };
-		7B7474442BEF9F39008FD4D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7B7474462BEF9F39008FD4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,15 +99,26 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5D462567A4EA4C0E6ABCD27 /* Pods_RunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0495124C614AA2441CC409E /* Pods-RunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA47D17A06C203F94CBBAC91 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7B7474372BEF9F09008FD4D7 /* Frameworks */ = {
+		3F2954473CA332F5693D6400 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B74743F2BEF9F0A008FD4D7 /* SwiftUI.framework in Frameworks */,
-				7B74743D2BEF9F0A008FD4D7 /* WidgetKit.framework in Frameworks */,
+				522BBAA85B75BEC8CCE06FF2 /* Pods_RunnerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B66689B2BF8F0B700C9D171 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B6668A02BF8F0BD00C9D171 /* SwiftUI.framework in Frameworks */,
+				7B66689F2BF8F0BD00C9D171 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C090293070A2B0ECDC4A104 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,24 +141,41 @@
 			path = RunnerTests;
 			sourceTree = "<group>";
 		};
+		638B731D2212CC924C89FD65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EF100CD390242F3AC57F9CC /* Pods-Runner.debug.xcconfig */,
+				0D0DA312A4D35019086852C6 /* Pods-Runner.release.xcconfig */,
+				49BE07DAE0BEE2B0805CFED3 /* Pods-Runner.profile.xcconfig */,
+				311485D494A510554308D320 /* Pods-RunnerTests.debug.xcconfig */,
+				B0495124C614AA2441CC409E /* Pods-RunnerTests.release.xcconfig */,
+				00234A4CAC8578CFA6D2CB5E /* Pods-RunnerTests.profile.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7B6668A12BF8F0BD00C9D171 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				7B6668A22BF8F0BD00C9D171 /* widgetBundle.swift */,
+				7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */,
+				7B6668A62BF8F0BE00C9D171 /* widget.swift */,
+				7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */,
+				7B6668A92BF8F0FF00C9D171 /* Assets.xcassets */,
+				7B6668AB2BF8F10000C9D171 /* Info.plist */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 		7B74743B2BEF9F09008FD4D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				7B74743C2BEF9F09008FD4D7 /* WidgetKit.framework */,
 				7B74743E2BEF9F0A008FD4D7 /* SwiftUI.framework */,
+				BA47D17A06C203F94CBBAC91 /* Pods_Runner.framework */,
+				A5D462567A4EA4C0E6ABCD27 /* Pods_RunnerTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7B7474402BEF9F0A008FD4D7 /* CricketScoreWidget */ = {
-			isa = PBXGroup;
-			children = (
-				7B7474412BEF9F0A008FD4D7 /* CricketScoreWidget.swift */,
-				7B7474432BEF9F0B008FD4D7 /* CricketScoreWidget.intentdefinition */,
-				7B7474442BEF9F39008FD4D7 /* Assets.xcassets */,
-				7B7474462BEF9F39008FD4D7 /* Info.plist */,
-			);
-			path = CricketScoreWidget;
 			sourceTree = "<group>";
 		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
@@ -154,10 +194,11 @@
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
-				7B7474402BEF9F0A008FD4D7 /* CricketScoreWidget */,
+				7B6668A12BF8F0BD00C9D171 /* widget */,
 				7B74743B2BEF9F09008FD4D7 /* Frameworks */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
+				638B731D2212CC924C89FD65 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,7 +207,7 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
-				7B74743A2BEF9F09008FD4D7 /* CricketScoreWidgetExtension.appex */,
+				7B66689E2BF8F0B700C9D171 /* widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,8 +235,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 331C8087294A63A400263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */;
 			buildPhases = (
+				E86B3F701DB80330062D1631 /* [CP] Check Pods Manifest.lock */,
 				331C807D294A63A400263BE5 /* Sources */,
 				331C807F294A63A400263BE5 /* Resources */,
+				3F2954473CA332F5693D6400 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,27 +250,28 @@
 			productReference = 331C8081294A63A400263BE5 /* RunnerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7B7474392BEF9F09008FD4D7 /* CricketScoreWidgetExtension */ = {
+		7B66689D2BF8F0B700C9D171 /* widgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B7474502BEF9F3A008FD4D7 /* Build configuration list for PBXNativeTarget "CricketScoreWidgetExtension" */;
+			buildConfigurationList = 7B6668B12BF8F10100C9D171 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
 			buildPhases = (
-				7B7474362BEF9F09008FD4D7 /* Sources */,
-				7B7474372BEF9F09008FD4D7 /* Frameworks */,
-				7B7474382BEF9F09008FD4D7 /* Resources */,
+				7B66689A2BF8F0B700C9D171 /* Sources */,
+				7B66689B2BF8F0B700C9D171 /* Frameworks */,
+				7B66689C2BF8F0B700C9D171 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CricketScoreWidgetExtension;
-			productName = CricketScoreWidgetExtension;
-			productReference = 7B74743A2BEF9F09008FD4D7 /* CricketScoreWidgetExtension.appex */;
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = 7B66689E2BF8F0B700C9D171 /* widgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		97C146ED1CF9000F007C117D /* Runner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
+				AED0A164B3A5268A6C4BAC4B /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
@@ -235,11 +279,12 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				7B74744C2BEF9F3A008FD4D7 /* Embed App Extensions */,
+				E59872C4E48EB18736E9FCB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7B74744A2BEF9F39008FD4D7 /* PBXTargetDependency */,
+				7B6668AF2BF8F10000C9D171 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -253,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
@@ -261,8 +306,8 @@
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = 97C146ED1CF9000F007C117D;
 					};
-					7B7474392BEF9F09008FD4D7 = {
-						CreatedOnToolsVersion = 12.4;
+					7B66689D2BF8F0B700C9D171 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 					97C146ED1CF9000F007C117D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -285,7 +330,7 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
-				7B7474392BEF9F09008FD4D7 /* CricketScoreWidgetExtension */,
+				7B66689D2BF8F0B700C9D171 /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -298,11 +343,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7B7474382BEF9F09008FD4D7 /* Resources */ = {
+		7B66689C2BF8F0B700C9D171 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B7474452BEF9F39008FD4D7 /* Assets.xcassets in Resources */,
+				7B6668AA2BF8F0FF00C9D171 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +396,67 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
 		};
+		AED0A164B3A5268A6C4BAC4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Runner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E59872C4E48EB18736E9FCB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E86B3F701DB80330062D1631 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RunnerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -362,12 +468,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7B7474362BEF9F09008FD4D7 /* Sources */ = {
+		7B66689A2BF8F0B700C9D171 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B7474422BEF9F0A008FD4D7 /* CricketScoreWidget.swift in Sources */,
-				7B7474472BEF9F39008FD4D7 /* CricketScoreWidget.intentdefinition in Sources */,
+				7B6668AC2BF8F10000C9D171 /* widget.intentdefinition in Sources */,
+				7B6668A72BF8F0BE00C9D171 /* widget.swift in Sources */,
+				7B6668A52BF8F0BE00C9D171 /* widgetLiveActivity.swift in Sources */,
+				7B6668A32BF8F0BE00C9D171 /* widgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,8 +483,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6668AD2BF8F10000C9D171 /* widget.intentdefinition in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
-				7B7474482BEF9F39008FD4D7 /* CricketScoreWidget.intentdefinition in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,10 +497,10 @@
 			target = 97C146ED1CF9000F007C117D /* Runner */;
 			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
 		};
-		7B74744A2BEF9F39008FD4D7 /* PBXTargetDependency */ = {
+		7B6668AF2BF8F10000C9D171 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7B7474392BEF9F09008FD4D7 /* CricketScoreWidgetExtension */;
-			targetProxy = 7B7474492BEF9F39008FD4D7 /* PBXContainerItemProxy */;
+			target = 7B66689D2BF8F0B700C9D171 /* widgetExtension */;
+			targetProxy = 7B6668AE2BF8F10000C9D171 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -480,6 +588,7 @@
 				DEVELOPMENT_TEAM = J87NH8DD4P;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,6 +605,7 @@
 		};
 		331C8088294A63A400263BE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 311485D494A510554308D320 /* Pods-RunnerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -513,6 +623,7 @@
 		};
 		331C8089294A63A400263BE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0495124C614AA2441CC409E /* Pods-RunnerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +639,7 @@
 		};
 		331C808A294A63A400263BE5 /* Profile */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00234A4CAC8578CFA6D2CB5E /* Pods-RunnerTests.profile.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -541,91 +653,115 @@
 			};
 			name = Profile;
 		};
-		7B74744D2BEF9F3A008FD4D7 /* Debug */ = {
+		7B6668B22BF8F10100C9D171 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J87NH8DD4P;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = CricketScoreWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.aj.CricketScoreWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kanjolia.dynamic.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7B74744E2BEF9F3A008FD4D7 /* Release */ = {
+		7B6668B32BF8F10100C9D171 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: jeetleydavidson@gmail.com (67MW3BX4FB)";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J87NH8DD4P;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = CricketScoreWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.aj.CricketScoreWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kanjolia.dynamic.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		7B74744F2BEF9F3A008FD4D7 /* Profile */ = {
+		7B6668B42BF8F10100C9D171 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J87NH8DD4P;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = CricketScoreWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.aj.CricketScoreWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kanjolia.dynamic.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -752,6 +888,7 @@
 				DEVELOPMENT_TEAM = J87NH8DD4P;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,6 +919,7 @@
 				DEVELOPMENT_TEAM = J87NH8DD4P;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -809,12 +947,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7B7474502BEF9F3A008FD4D7 /* Build configuration list for PBXNativeTarget "CricketScoreWidgetExtension" */ = {
+		7B6668B12BF8F10100C9D171 /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7B74744D2BEF9F3A008FD4D7 /* Debug */,
-				7B74744E2BEF9F3A008FD4D7 /* Release */,
-				7B74744F2BEF9F3A008FD4D7 /* Profile */,
+				7B6668B22BF8F10100C9D171 /* Debug */,
+				7B6668B32BF8F10100C9D171 /* Release */,
+				7B6668B42BF8F10100C9D171 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
