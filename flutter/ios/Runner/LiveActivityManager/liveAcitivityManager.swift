@@ -12,7 +12,7 @@ class LiveActivityManager {
 
     if let info = data as? [String: Any] {
       let state = StopwatchDIWidgetAttributes.ContentState(
-        currentscore: info["currentscore"] as? Int ?? "A",
+        currentscore: info["currentscore"] as? Int ?? 0,
         team1Name: info["team1Name"] as? String ?? "A",
         team2Name: info["team2Name"] as? String ?? "B",
         wkts: info["wkts"] as? Int ?? 0
@@ -28,7 +28,7 @@ class LiveActivityManager {
 func updateLiveActivity(data: [String: Any]?, result: FlutterResult) {
   if let info = data as? [String: Any] {
     let updatedState = StopwatchDIWidgetAttributes.ContentState(
-      currentscore: info["currentscore"] as? Int ?? "A",
+      currentscore: info["currentscore"] as? Int ?? 0,
       team1Name: info["team1Name"] as? String ?? "A",
       team2Name: info["team2Name"] as? String ?? "B",
       wkts: info["wkts"] as? Int ?? 0

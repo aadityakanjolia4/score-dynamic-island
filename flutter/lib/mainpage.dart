@@ -95,15 +95,17 @@ class _MainPageState extends State<MainPage> {
     }
   }
 
-  void activityStart(int currentscore, String team1Name, String team2Name, int wkts) {
-  int currentscore = 0;
-  String team1Name = this.team1Name;
-  String team2Name = this.team2Name;
-  int wkts = int.parse(prevWickets);
+  // void activityStart(int currentscore, String team1Name, String team2Name, int wkts) {
+  // int currentscore = int.parse(showrun);
+  // String team1Name = this.team1Name;
+  // String team2Name = this.team2Name;
+  // int wkts = int.parse(prevWickets);
+  void activityStart(){
+
     print("View Score button pressed");
     final DynamicIslandManager diManager = DynamicIslandManager(channelKey: 'DI');
     diManager.startLiveActivity(
-      jsonData: DynamicIslandStopwatchDataModel(currentscore: currentscore, team1Name: team1Name, team2Name: team2Name, wkts: wkts).toMap(),
+      jsonData: DynamicIslandStopwatchDataModel(currentscore: int.parse(showrun), team1Name: team1Name, team2Name: team2Name, wkts: int.parse(prevWickets)).toMap(),
     );
 
     timer = Timer.periodic(const Duration(seconds: 10), (timer) {
@@ -113,10 +115,10 @@ class _MainPageState extends State<MainPage> {
       // invoking the updateLiveActivity Method
       diManager.updateLiveActivity(
         jsonData: DynamicIslandStopwatchDataModel(
-          currentscore: currentscore,
+          currentscore: int.parse(showrun),
           team1Name:team1Name,
           team2Name:team2Name,
-          wkts:wkts
+          wkts:int.parse(prevWickets)
         ).toMap(),
       );
     });
@@ -261,7 +263,8 @@ class _MainPageState extends State<MainPage> {
                                  _fetchCricketMatch(currentMatchId).then((_) {
                                   // Extracted data is available after _fetchCricketMatch completes
                                   // Call activityStart with extracted data
-                                  activityStart(int.parse(showrun), team1Name, team2Name, int.parse(prevWickets));
+                                  activityStart();
+                                  // activityStart(int.parse(showrun), team1Name, team2Name, int.parse(prevWickets));
                                 });
                               }, // Connect button to activityStart function
                                                             child: Text("View Score"),
