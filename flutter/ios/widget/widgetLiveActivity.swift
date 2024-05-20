@@ -105,8 +105,8 @@ struct widgetLiveActivity: Widget {
 }
 
 struct widgetLiveActivity_Previews: PreviewProvider {
-    static let attributes = StopwatchDIWidgetAttributes()
-    static let contentState = StopwatchDIWidgetAttributes.ContentState(elapsedTime: 2324234)
+    static let attributes = widgetAttributes()
+    static let contentState = widgetAttributes.ContentState(elapsedTime: 2324234)
 
     static var previews: some View {
         attributes

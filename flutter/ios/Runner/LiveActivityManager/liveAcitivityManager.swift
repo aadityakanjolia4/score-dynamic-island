@@ -4,21 +4,21 @@ import Foundation
 
 class LiveActivityManager {
 
-  private var stopwatchActivity: Activity<StopwatchDIWidgetAttributes>? = nil
+  private var stopwatchActivity: Activity<widgetAttributes>? = nil
 
   func startLiveActivity(data: [String: Any]?, result: FlutterResult) {
-    let attributes = StopwatchDIWidgetAttributes()
+    let attributes = widgetAttributes()
     
 
     if let info = data as? [String: Any] {
-      let state = StopwatchDIWidgetAttributes.ContentState(
+      let state = widgetAttributes.ContentState(
         currentscore: info["currentscore"] as? Int ?? 0,
         team1Name: info["team1Name"] as? String ?? "A",
         team2Name: info["team2Name"] as? String ?? "B",
         wkts: info["wkts"] as? Int ?? 0
         
       )
-      stopwatchActivity = try? Activity<StopwatchDIWidgetAttributes>.request(
+      stopwatchActivity = try? Activity<widgetAttributes>.request(
         attributes: attributes, contentState: state, pushType: nil)
     } else {
       result(FlutterError(code: "418", message: "Live activity didn't invoked", details: nil))
@@ -27,7 +27,7 @@ class LiveActivityManager {
 
 func updateLiveActivity(data: [String: Any]?, result: FlutterResult) {
   if let info = data as? [String: Any] {
-    let updatedState = StopwatchDIWidgetAttributes.ContentState(
+    let updatedState = widgetAttributes.ContentState(
       currentscore: info["currentscore"] as? Int ?? 0,
       team1Name: info["team1Name"] as? String ?? "A",
       team2Name: info["team2Name"] as? String ?? "B",
