@@ -79,12 +79,12 @@ struct widgetLiveActivity: Widget {
                     }
                 }
             } compactLeading: {
-                Text(context.state.currentscore)
+                Text("\(context.state.currentscore)")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.yellow)
                     .padding(.leading, 4)
             } compactTrailing: {
-                Text(context.state.wkts)
+                Text("\(context.state.wkts)")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.yellow)
                     .padding(.trailing, 4)
