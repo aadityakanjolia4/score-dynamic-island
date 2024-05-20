@@ -25,7 +25,7 @@ struct widgetAttributes: ActivityAttributes {
 
 struct widgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: CricketMatchAttributes.self) { context in
+        ActivityConfiguration(for: widgetAttributes.self) { context in
             // Lock screen/banner UI
             HStack {
                 VStack(alignment: .leading) {
