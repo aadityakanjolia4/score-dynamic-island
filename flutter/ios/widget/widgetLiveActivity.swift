@@ -41,7 +41,7 @@ struct widgetLiveActivity: Widget {
                     Text("Score: \(context.state.currentscore)")
                         .font(.system(size: 24, weight: .semibold))
                         .foregroundColor(.yellow)
-                    Text("Wickets: \(context.state.wickets)")
+                    Text("Wickets: \(context.state.wkts)")
                         .font(.system(size: 24, weight: .semibold))
                         .foregroundColor(.yellow)
                 }
@@ -71,7 +71,7 @@ struct widgetLiveActivity: Widget {
                                 Text("Score: \(context.state.currentscore)")
                                     .font(.system(size: 24, weight: .semibold))
                                     .foregroundColor(.yellow)
-                                Text("Wickets: \(context.state.wickets)")
+                                Text("Wickets: \(context.state.wkts)")
                                     .font(.system(size: 24, weight: .semibold))
                                     .foregroundColor(.yellow)
                             }
@@ -84,7 +84,7 @@ struct widgetLiveActivity: Widget {
                     .foregroundColor(.yellow)
                     .padding(.leading, 4)
             } compactTrailing: {
-                Text(context.state.wickets)
+                Text(context.state.wkts)
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.yellow)
                     .padding(.trailing, 4)
@@ -93,7 +93,7 @@ struct widgetLiveActivity: Widget {
                     Text("Score: \(context.state.currentscore)")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.yellow)
-                    Text("Wickets: \(context.state.wickets)")
+                    Text("Wickets: \(context.state.wkts)")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.yellow)
                 }
