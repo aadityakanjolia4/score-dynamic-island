@@ -105,21 +105,29 @@ struct widgetLiveActivity: Widget {
 }
 
 struct widgetLiveActivity_Previews: PreviewProvider {
+    
     static let attributes = widgetAttributes()
-    static let contentState = widgetAttributes.ContentState(elapsedTime: 2324234)
+    static let contentState = widgetAttributes.ContentState(
+        currentscore: 232,
+        team1Name: "Team A",
+        team2Name: "Team B",
+        wkts: 3
+    )
 
     static var previews: some View {
-        attributes
-            .previewContext(contentState, viewKind: .dynamicIsland(.compact))
-            .previewDisplayName("Island Compact")
-        attributes
-            .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
-            .previewDisplayName("Island Expanded")
-        attributes
-            .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
-            .previewDisplayName("Minimal")
-        attributes
-            .previewContext(contentState, viewKind: .content)
-            .previewDisplayName("Notification")
+        Group {
+            attributes
+                .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+                .previewDisplayName("Island Compact")
+            attributes
+                .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+                .previewDisplayName("Island Expanded")
+            attributes
+                .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+                .previewDisplayName("Minimal")
+            attributes
+                .previewContext(contentState, viewKind: .content)
+                .previewDisplayName("Notification")
+        }
     }
 }
