@@ -38,7 +38,7 @@ struct widgetLiveActivity: Widget {
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("Score: \(context.state.currentScore)")
+                    Text("Score: \(context.state.currentscore)")
                         .font(.system(size: 24, weight: .semibold))
                         .foregroundColor(.yellow)
                     Text("Wickets: \(context.state.wickets)")
@@ -68,7 +68,7 @@ struct widgetLiveActivity: Widget {
                             }
                             Spacer()
                             VStack(alignment: .trailing) {
-                                Text("Score: \(context.state.currentScore)")
+                                Text("Score: \(context.state.currentscore)")
                                     .font(.system(size: 24, weight: .semibold))
                                     .foregroundColor(.yellow)
                                 Text("Wickets: \(context.state.wickets)")
@@ -79,7 +79,7 @@ struct widgetLiveActivity: Widget {
                     }
                 }
             } compactLeading: {
-                Text(context.state.currentScore)
+                Text(context.state.currentscore)
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.yellow)
                     .padding(.leading, 4)
@@ -90,7 +90,7 @@ struct widgetLiveActivity: Widget {
                     .padding(.trailing, 4)
             } minimal: {
                 VStack {
-                    Text("Score: \(context.state.currentScore)")
+                    Text("Score: \(context.state.currentscore)")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.yellow)
                     Text("Wickets: \(context.state.wickets)")
