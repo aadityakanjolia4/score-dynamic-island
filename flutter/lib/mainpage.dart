@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   Future<void> _fetchCricketMatch(String matchId) async {
-    final response = await http.get(Uri.parse('http://192.168.1.47:5006/score?id=$matchId'));
+    final response = await http.get(Uri.parse('https://fetch-api-zeta-mauve.vercel.app/score?id=$matchId'));
     // print('$matchId');
     if (response.statusCode == 200) {
       Map<String, dynamic> matchData = json.decode(response.body);
@@ -75,7 +75,7 @@ class _MainPageState extends State<MainPage> {
   }
 Future<void> _updateMatchId() async {
   final response = await http.get(
-    Uri.parse('http://127.0.0.1:5005/current_match_id'), // Replace with the correct IP address
+    Uri.parse('https://update-matchid.vercel.app/current_match_id'), // Replace with the correct IP address
   );
   
   if (response.statusCode == 200) {
