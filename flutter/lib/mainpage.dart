@@ -53,22 +53,22 @@ class _MainPageState extends State<MainPage> {
 
       // Add match data to the stream
       _streamController.add(matchData);
-      var score = matchData['livescore'].split('/');
-      List<String> parts = score;
-      String runs = parts[0];
-      String wkts = parts[1];
-      List<String> secondPartParts = wkts.split(' ');
-      List<String> firstPartParts = runs.split(' ');
-      String wickets = secondPartParts[0];
-      String run= firstPartParts[1];
-      print('$run');
-      if (int.parse(wickets) > int.parse(prevWickets)) {
-        print("vibrateeeeee wktttttt");
-        // if (await Vibration.hasVibrator()) { // Check if the device has a vibrator
+        var score = matchData['livescore'].split('/');
+        if(score.contains('/')){
+        List<String> parts = score;
+        String runs = parts[0];
+        String wkts = parts[1];
+        List<String> secondPartParts = wkts.split(' ');
+        List<String> firstPartParts = runs.split(' ');
+        String wickets = secondPartParts[0];
+        String run = firstPartParts[1];
+        if (int.parse(wickets) > int.parse(prevWickets)) {
           Vibration.vibrate(); // Vibrate the phone
-        // }
-        prevWickets = wickets;
-      }
+          prevWickets = wickets;
+          run=run;
+        }
+      } 
+
     } else {
       throw Exception('Failed to load cricket match');
     }
