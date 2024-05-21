@@ -140,11 +140,13 @@ Future<void> _updateMatchId() async {
                 team1Name = teamNames[0];
                 team2Name = teamNames[1];
                 var score = matchData['livescore'].split('/');
+                if(score.contains('/')){
                 List<String> parts = score;
                 String runs = parts[0];
                 String wkts = parts[1];
                 List<String> secondPartParts = wkts.split(' ');
-                String wickets=secondPartParts[0];
+                String wickets = secondPartParts[0];
+                }
                 // print('$wickets');
 
                 String team1Asset = team1Name.replaceAll(' ', '') + '.png';
