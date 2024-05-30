@@ -1,4 +1,4 @@
-import 'package:aj/login.dart';
+// import 'package:aj/login.dart';
 import 'package:aj/splashh.dart';
 import 'package:flutter/material.dart';
 
