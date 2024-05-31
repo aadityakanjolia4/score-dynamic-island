@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
-import 'package:vibration/vibration.dart';
+// import 'package:vibration/vibration.dart';
 import 'package:aj/dynamic_island_manager.dart';
 import 'package:aj/dynamic_island_stopwatch_data_model.dart';
 
@@ -70,7 +70,7 @@ class _MainPageState extends State<MainPage> {
         String run = firstPartParts[1];
         showrun = firstPartParts[1];
         if (int.parse(wickets) > int.parse(prevWickets)) {
-          Vibration.vibrate(); // Vibrate the phone
+          // Vibration.vibrate(); // Vibrate the phone
           prevWickets = wickets;
           run=run;
         }
