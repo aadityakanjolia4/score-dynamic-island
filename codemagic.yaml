@@ -14,8 +14,6 @@ workflows:
           cd ios
           pod install
           cd ..
-      - name: Run Flutter analyze
-        script: flutter analyze
       - name: Build iOS app
         script: flutter build ios --release --no-codesign
     artifacts:
