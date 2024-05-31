@@ -8,11 +8,12 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
+          cd flutter
           flutter pub get
+          flutter build ios-framework
           cd ios
           pod install
           cd ..
-          flutter build ios-framework
       - name: Run Flutter analyze
         script: flutter analyze
       - name: Build iOS app
