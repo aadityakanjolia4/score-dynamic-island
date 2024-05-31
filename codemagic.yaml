@@ -20,5 +20,9 @@ workflows:
           flutter build ios --release --no-codesign
     artifacts:
       - flutter/build/ios/iphoneos/*.ipa
+    publishing:
+      email:
+        recipients:
+          - a21kanjolia@gmail.com  
 
      
