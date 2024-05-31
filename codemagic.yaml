@@ -19,5 +19,5 @@ workflows:
           cd flutter
           flutter build ios --release --no-codesign
     artifacts:
-      - build/ios/iphoneos/*.app
+      - flutter/build/ios/iphoneos/*.app
      
