@@ -3,30 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0060A01DE778725893C39540 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B495A374EC2C2784C0F719C6 /* Pods_Runner.framework */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
+		52D9A2EE2C1502C50012EC28 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9A2ED2C1502C50012EC28 /* LiveActivityManager.swift */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		7B024EE42C0E2E59003986B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		7B024EE52C0E2E59003986B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		7B024EE62C0E588F003986B1 /* widgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */; };
-		7B024EE82C0E5A97003986B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B024EE72C0E5A97003986B1 /* SceneDelegate.swift */; };
 		7B66689F2BF8F0BD00C9D171 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743C2BEF9F09008FD4D7 /* WidgetKit.framework */; };
 		7B6668A02BF8F0BD00C9D171 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743E2BEF9F0A008FD4D7 /* SwiftUI.framework */; };
 		7B6668A32BF8F0BE00C9D171 /* widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A22BF8F0BD00C9D171 /* widgetBundle.swift */; };
 		7B6668A52BF8F0BE00C9D171 /* widgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */; };
-		7B6668A72BF8F0BE00C9D171 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A62BF8F0BE00C9D171 /* widget.swift */; };
 		7B6668AC2BF8F10000C9D171 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */; };
 		7B6668AD2BF8F10000C9D171 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */; };
 		7B6668B02BF8F10000C9D171 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B66689E2BF8F0B700C9D171 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7BB738942C01C7DF00945841 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB738932C01C7DF00945841 /* Flutter.xcframework */; };
 		7BB738952C01C7DF00945841 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB738932C01C7DF00945841 /* Flutter.xcframework */; };
 		7BB738962C01C7DF00945841 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB738932C01C7DF00945841 /* Flutter.xcframework */; };
-		7BBD2DCE2BFB9926008CC67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		7BD54E432C00DB9C00D41004 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		BDC85E076105F3A80D7614C1 /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EE9A58EDC2D7D0B32B640E /* Pods_RunnerTests.framework */; };
 /* End PBXBuildFile section */
@@ -80,22 +78,21 @@
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		52D9A2ED2C1502C50012EC28 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 		69F578B3FD929C606D1A0D61 /* Pods-RunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
-		7B024EE72C0E5A97003986B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7B39799A2BF3F6600017BDF6 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		7B66689E2BF8F0B700C9D171 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6668A22BF8F0BD00C9D171 /* widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetBundle.swift; sourceTree = "<group>"; };
 		7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetLiveActivity.swift; sourceTree = "<group>"; };
-		7B6668A62BF8F0BE00C9D171 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		7B6668A92BF8F0FF00C9D171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B6668AB2BF8F10000C9D171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B74743C2BEF9F09008FD4D7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7B74743E2BEF9F0A008FD4D7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		7BB738932C01C7DF00945841 /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../../build/ios/framework/Debug/Flutter.xcframework; sourceTree = "<group>"; };
+		7BB738932C01C7DF00945841 /* Flutter.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC"; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../../build/ios/framework/Debug/Flutter.xcframework; sourceTree = "<group>"; };
 		7BF48D3D16926AB000EA8F19 /* Flutter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = Flutter.podspec; path = Flutter/Flutter.podspec; sourceTree = SOURCE_ROOT; };
 		7BF48D3E16926AB100EA8F19 /* flutter_export_environment.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = flutter_export_environment.sh; path = Flutter/flutter_export_environment.sh; sourceTree = SOURCE_ROOT; };
 		9137313EC5D7394094F6BCC4 /* Pods-RunnerTests.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +167,6 @@
 			children = (
 				7B6668A22BF8F0BD00C9D171 /* widgetBundle.swift */,
 				7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */,
-				7B6668A62BF8F0BE00C9D171 /* widget.swift */,
 				7B6668A82BF8F0BF00C9D171 /* widget.intentdefinition */,
 				7B6668A92BF8F0FF00C9D171 /* Assets.xcassets */,
 				7B6668AB2BF8F10000C9D171 /* Info.plist */,
@@ -238,7 +234,7 @@
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
-				7B024EE72C0E5A97003986B1 /* SceneDelegate.swift */,
+				52D9A2ED2C1502C50012EC28 /* LiveActivityManager.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -470,9 +466,7 @@
 			files = (
 				7BD54E432C00DB9C00D41004 /* GeneratedPluginRegistrant.m in Sources */,
 				7B6668AC2BF8F10000C9D171 /* widget.intentdefinition in Sources */,
-				7B6668A72BF8F0BE00C9D171 /* widget.swift in Sources */,
 				7B6668A52BF8F0BE00C9D171 /* widgetLiveActivity.swift in Sources */,
-				7BBD2DCE2BFB9926008CC67D /* AppDelegate.swift in Sources */,
 				7B6668A32BF8F0BE00C9D171 /* widgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,10 +475,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B024EE82C0E5A97003986B1 /* SceneDelegate.swift in Sources */,
 				7B024EE62C0E588F003986B1 /* widgetLiveActivity.swift in Sources */,
 				7B6668AD2BF8F10000C9D171 /* widget.intentdefinition in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				52D9A2EE2C1502C50012EC28 /* LiveActivityManager.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
