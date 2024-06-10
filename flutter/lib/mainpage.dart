@@ -105,7 +105,7 @@ class _MainPageState extends State<MainPage> {
     print("View Score button pressed");
     final DynamicIslandManager diManager = DynamicIslandManager(channelKey: 'DI');
     diManager.startLiveActivity(
-      jsonData: DynamicIslandStopwatchDataModel(currentscore: int.parse(showrun), team1Name: team1Name, team2Name: team2Name, wkts: int.parse(prevWickets)).toMap(),
+      jsonData: DynamicIslandStopwatchDataModel(currentscore: showrun, team1Name: team1Name, team2Name: team2Name, wkts: prevWickets).toMap(),
     );
 
     timer = Timer.periodic(const Duration(seconds: 10), (timer) {
@@ -115,10 +115,10 @@ class _MainPageState extends State<MainPage> {
       // invoking the updateLiveActivity Method
       diManager.updateLiveActivity(
         jsonData: DynamicIslandStopwatchDataModel(
-          currentscore: int.parse(showrun),
+          currentscore: showrun,
           team1Name:team1Name,
           team2Name:team2Name,
-          wkts:int.parse(prevWickets)
+          wkts:prevWickets
         ).toMap(),
       );
     });
