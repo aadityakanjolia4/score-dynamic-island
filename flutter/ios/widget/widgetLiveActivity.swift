@@ -13,10 +13,10 @@ struct widgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         
-       var currentscore:Int
+       var currentscore:String
        var team1Name: String
        var team2Name: String
-       var wkts : Int
+       var wkts : String
     }
 
     // Fixed non-changing properties about your activity go here!
@@ -108,10 +108,10 @@ struct widgetLiveActivity_Previews: PreviewProvider {
     
     static let attributes = widgetAttributes()
     static let contentState = widgetAttributes.ContentState(
-        currentscore: 232,
+        currentscore: "232",
         team1Name: "Team A",
         team2Name: "Team B",
-        wkts: 3
+        wkts: "3"
     )
 
     static var previews: some View {
