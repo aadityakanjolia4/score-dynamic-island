@@ -1,9 +1,9 @@
 class DynamicIslandStopwatchDataModel {
   // final int elapsedSeconds;
-  final int currentscore;
+  final String currentscore;
   final String team1Name;
   final String team2Name;
-  final int wkts;
+  final String wkts;
 
   DynamicIslandStopwatchDataModel({
     required this.currentscore,

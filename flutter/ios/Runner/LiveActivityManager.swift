@@ -9,14 +9,21 @@ class LiveActivityManager {
   func startLiveActivity(data: [String: Any]?, result: FlutterResult) {
     print("Attempting to start live activity...")
     let attributes = widgetAttributes()
+        print("widgetAttributes initialized.")
+
     
     if let info = data as? [String: Any] {
       let state = widgetAttributes.ContentState(
-        currentscore: info["currentscore"] as? Int ?? 0,
+        currentscore: info["currentscore"] as? String ?? "C",
         team1Name: info["team1Name"] as? String ?? "A",
         team2Name: info["team2Name"] as? String ?? "B",
-        wkts: info["wkts"] as? Int ?? 0
+        wkts: info["wkts"] as? String ?? "D"
       )
+       print("currentscore: \(currentscore)")
+      print("team1Name: \(team1Name)")
+      print("team2Name: \(team2Name)")
+      print("wkts: \(wkts)")
+      
       DIwidget = try? Activity<widgetAttributes>.request(
         attributes: attributes, contentState: state, pushType: nil)
       if DIwidget != nil {
@@ -35,11 +42,15 @@ class LiveActivityManager {
     print("Attempting to update live activity...")
     if let info = data as? [String: Any] {
       let updatedState = widgetAttributes.ContentState(
-        currentscore: info["currentscore"] as? Int ?? 0,
-        team1Name: info["team1Name"] as? String ?? "A",
-        team2Name: info["team2Name"] as? String ?? "B",
-        wkts: info["wkts"] as? Int ?? 0
+        currentscore: info["currentscore"] as? String ?? "CC",
+        team1Name: info["team1Name"] as? String ?? "AA",
+        team2Name: info["team2Name"] as? String ?? "BB",
+        wkts: info["wkts"] as? String ?? "DD"
       )
+       print("currentscore: \(currentscore)")
+      print("team1Name: \(team1Name)")
+      print("team2Name: \(team2Name)")
+      print("wkts: \(wkts)")
 
       Task {
         await DIwidget?.update(using: updatedState)
