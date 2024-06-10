@@ -47,10 +47,10 @@ class LiveActivityManager {
         team2Name: info["team2Name"] as? String ?? "BB",
         wkts: info["wkts"] as? String ?? "DD"
       )
-       print("currentscore: \(currentscore)")
-      print("team1Name: \(team1Name)")
-      print("team2Name: \(team2Name)")
-      print("wkts: \(wkts)")
+       print("currentscore: \(updatedState.currentscore)")
+      print("team1Name: \(updatedState.team1Name)")
+      print("team2Name: \(updatedState.team2Name)")
+      print("wkts: \(updatedState.wkts)")
 
       Task {
         await DIwidget?.update(using: updatedState)
