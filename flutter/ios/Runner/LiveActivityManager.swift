@@ -19,10 +19,10 @@ class LiveActivityManager {
         team2Name: info["team2Name"] as? String ?? "B",
         wkts: info["wkts"] as? String ?? "D"
       )
-       print("currentscore: \(currentscore)")
-      print("team1Name: \(team1Name)")
-      print("team2Name: \(team2Name)")
-      print("wkts: \(wkts)")
+      print("currentscore: \(state.currentscore)")
+      print("team1Name: \(state.team1Name)")
+      print("team2Name: \(state.team2Name)")
+      print("wkts: \(state.wkts)")
       
       DIwidget = try? Activity<widgetAttributes>.request(
         attributes: attributes, contentState: state, pushType: nil)
