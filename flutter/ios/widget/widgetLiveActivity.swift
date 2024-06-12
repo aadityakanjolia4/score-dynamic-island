@@ -593,7 +593,6 @@ struct widgetLiveActivity: Widget {
 //         }
 //     }
 // }
-nt: .leading) {
 //                     Text(context.state.team1Name)
 //                         .font(.system(size: 20, weight: .semibold))
 //                         .foregroundColor(.white)
@@ -696,7 +695,6 @@ nt: .leading) {
 //         }
 //     }
 // }
-nt: .leading) {
 //                     Text(context.state.team1Name)
 //                         .font(.system(size: 20, weight: .semibold))
 //                         .foregroundColor(.white)
