@@ -30,10 +30,10 @@ struct widgetLiveActivity: Widget {
         ActivityConfiguration(for: widgetAttributes.self) { context in
             // Lock screen/banner UI
             HStack {
-                Text(context.state.team1Name)
+                Text("Current time ellapsed")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(.white)
-                Spacer()
+                    Spacer()
                 
             }
             .padding(.horizontal)
@@ -47,26 +47,28 @@ struct widgetLiveActivity: Widget {
                         Text("StopWatchX")
                         Spacer().frame(height: 24)
                         HStack {
-                            Text(context.state.team2Name)
+                            Text("Time ellapsed")
                                 .font(.system(size: 20, weight: .semibold))
                                 .foregroundColor(.white)
+                            // Text(context.state.team2Name)
                            
-                            Spacer().frame(width: 10)
-                            Text(context.state.team1Name)
-                                .font(.system(size: 24, weight: .semibold))
-                                .foregroundColor(.yellow)
+                            Spacer()
+                            // Text(context.state.team1Name)
+                            //     .font(.system(size: 24, weight: .semibold))
+                            //     .foregroundColor(.yellow)
                         }.padding(.horizontal)
                     }
                 }
             } compactLeading: {
-                Text(context.state.currentscore).foregroundColor(.yellow)
+                // Text(context.state.currentscore).foregroundColor(.yellow)
+                //     .padding(.trailing, 4)
+                Text("Team 1").foregroundColor(.yellow)
                     .padding(.trailing, 4)
             } compactTrailing: {
-                Text(context.state.wkts).foregroundColor(.yellow)
+                Text("Team 2").foregroundColor(.yellow)
                     .padding(.trailing, 4)
             } minimal: {
-                Text(context.state.team1Name)
-                    .foregroundColor(.yellow)
+                Text("K").foregroundColor(.yellow)
                     .padding(.all, 4)
             }
             .widgetURL(URL(string: "http://www.apple.com"))
@@ -138,7 +140,728 @@ struct widgetLiveActivity: Widget {
 //                                 Text("Wickets: \(context.state.wkts)")
 //                                     .font(.system(size: 24, weight: .semibold))
 //                                     .foregroundColor(.yellow)
+//                             }nt: .leading) {
+//                     Text(context.state.team1Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                     Text(context.state.team2Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                 }
+//                 Spacer()
+//                 VStack(alignment: .trailing) {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .padding(.horizontal)
+//             .activityBackgroundTint(Color.black.opacity(0.5))
+//         } dynamicIsland: { context in
+//             DynamicIsland {
+//                 // Expanded UI
+//                 DynamicIslandExpandedRegion(.center) {
+//                     VStack(alignment: .center) {nt: .leading) {
+//                     Text(context.state.team1Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                     Text(context.state.team2Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                 }
+//                 Spacer()
+//                 VStack(alignment: .trailing) {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .padding(.horizontal)
+//             .activityBackgroundTint(Color.black.opacity(0.5))
+//         } dynamicIsland: { context in
+//             DynamicIsland {
+//                 // Expanded UI
+//                 DynamicIslandExpandedRegion(.center) {
+//                     VStack(alignment: .center) {
+//                         Text("Cricket Match")
+//                             .font(.system(size: 24, weight: .bold))
+//                             .foregroundColor(.white)
+//                         Spacer().frame(height: 24)
+//                         HStack {
+//                             VStack(alignment: .leading) {
+//                                 Text(context.state.team1Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                                 Text(context.state.team2Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
 //                             }
+//                             Spacer()
+//                             VStack(alignment: .trailing) {
+//                                 Text("Score: \(context.state.currentscore)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                                 Text("Wickets: \(context.state.wkts)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                             }
+//                         }.padding(.horizontal)
+//                     }
+//                 }
+//             } compactLeading: {
+//                 Text("\(context.state.currentscore)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.leading, 4)
+//             } compactTrailing: {
+//                 Text("\(context.state.wkts)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.trailing, 4)
+//             } minimal: {
+//                 VStack {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .widgetURL(URL(string: "http://www.apple.com"))
+//             .keylineTint(Color.red)
+//         }
+//     }
+// }
+
+// struct widgetLiveActivity_Previews: PreviewProvider {
+    
+//     static let attributes = widgetAttributes()
+//     static let contentState = widgetAttributes.ContentState(
+//         currentscore: "232",
+//         team1Name: "Team A",
+//         team2Name: "Team B",
+//         wkts: "3"
+//     )
+
+//     static var previews: some View {
+//         Group {
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//                 .previewDisplayName("Island Compact")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//                 .previewDisplayName("Island Expanded")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//                 .previewDisplayName("Minimal")
+//             attributes
+//                 .previewContext(contentState, viewKind: .content)
+//                 .previewDisplayName("Notification")
+//         }
+//     }
+// }
+
+//                         Text("Cricket Match")
+//                             .font(.system(size: 24, weight: .bold))
+//                             .foregroundColor(.white)
+//                         Spacer().frame(height: 24)
+//                         HStack {
+//                             VStack(alignment: .leading) {
+//                                 Text(context.state.team1Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                                 Text(context.state.team2Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                             }
+//                             Spacer()
+//                             VStack(alignment: .trailing) {
+//                                 Text("Score: \(context.state.currentscore)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                                 Text("Wickets: \(context.state.wkts)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                             }
+//                         }.padding(.horizontal)
+//                     }
+//                 }
+//             } compactLeading: {
+//                 Text("\(context.state.currentscore)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.leading, 4)
+//             } compactTrailing: {
+//                 Text("\(context.state.wkts)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.trailing, 4)
+//             } minimal: {
+//                 VStack {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .widgetURL(URL(string: "http://www.apple.com"))
+//             .keylineTint(Color.red)
+//         }
+//     }
+// }
+
+// struct widgetLiveActivity_Previews: PreviewProvider {
+    
+//     static let attributes = widgetAttributes()
+//     static let contentState = widgetAttributes.ContentState(
+//         currentscore: "232",
+//         team1Name: "Team A",
+//         team2Name: "Team B",
+//         wkts: "3"
+//     )
+
+//     static var previews: some View {
+//         Group {
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//                 .previewDisplayName("Island Compact")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//                 .previewDisplayName("Island Expanded")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//                 .previewDisplayName("Minimal")nt: .leading) {
+//                     Text(context.state.team1Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                     Text(context.state.team2Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                 }
+//                 Spacer()
+//                 VStack(alignment: .trailing) {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .padding(.horizontal)
+//             .activityBackgroundTint(Color.black.opacity(0.5))
+//         } dynamicIsland: { context in
+//             DynamicIsland {
+//                 // Expanded UI
+//                 DynamicIslandExpandedRegion(.center) {
+//                     VStack(alignment: .center) {
+//                         Text("Cricket Match")
+//                             .font(.system(size: 24, weight: .bold))
+//                             .foregroundColor(.white)
+//                         Spacer().frame(height: 24)
+//                         HStack {
+//                             VStack(alignment: .leading) {
+//                                 Text(context.state.team1Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                                 Text(context.state.team2Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                             }
+//                             Spacer()
+//                             VStack(alignment: .trailing) {
+//                                 Text("Score: \(context.state.currentscore)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                                 Text("Wickets: \(context.state.wkts)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                             }
+//                         }.padding(.horizontal)
+//                     }
+//                 }
+//             } compactLeading: {
+//                 Text("\(context.state.currentscore)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.leading, 4)
+//             } compactTrailing: {
+//                 Text("\(context.state.wkts)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.trailing, 4)
+//             } minimal: {
+//                 VStack {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)nt: .leading) {
+//                     Text(context.state.team1Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                     Text(context.state.team2Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                 }
+//                 Spacer()
+//                 VStack(alignment: .trailing) {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .padding(.horizontal)
+//             .activityBackgroundTint(Color.black.opacity(0.5))
+//         } dynamicIsland: { context in
+//             DynamicIsland {
+//                 // Expanded UI
+//                 DynamicIslandExpandedRegion(.center) {
+//                     VStack(alignment: .center) {
+//                         Text("Cricket Match")
+//                             .font(.system(size: 24, weight: .bold))
+//                             .foregroundColor(.white)
+//                         Spacer().frame(height: 24)
+//                         HStack {
+//                             VStack(alignment: .leading) {
+//                                 Text(context.state.team1Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                                 Text(context.state.team2Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                             }
+//                             Spacer()
+//                             VStack(alignment: .trailing) {
+//                                 Text("Score: \(context.state.currentscore)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                                 Text("Wickets: \(context.state.wkts)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                             }
+//                         }.padding(.horizontal)
+//                     }
+//                 }
+//             } compactLeading: {
+//                 Text("\(context.state.currentscore)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.leading, 4)
+//             } compactTrailing: {
+//                 Text("\(context.state.wkts)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.trailing, 4)
+//             } minimal: {
+//                 VStack {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .widgetURL(URL(string: "http://www.apple.com"))
+//             .keylineTint(Color.red)
+//         }
+//     }
+// }
+
+// struct widgetLiveActivity_Previews: PreviewProvider {
+    
+//     static let attributes = widgetAttributes()
+//     static let contentState = widgetAttributes.ContentState(
+//         currentscore: "232",
+//         team1Name: "Team A",
+//         team2Name: "Team B",
+//         wkts: "3"
+//     )nt: .leading) {
+//                     Text(context.state.team1Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                     Text(context.state.team2Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                 }
+//                 Spacer()
+//                 VStack(alignment: .trailing) {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .padding(.horizontal)
+//             .activityBackgroundTint(Color.black.opacity(0.5))
+//         } dynamicIsland: { context in
+//             DynamicIsland {
+//                 // Expanded UI
+//                 DynamicIslandExpandedRegion(.center) {
+//                     VStack(alignment: .center) {
+//                         Text("Cricket Match")
+//                             .font(.system(size: 24, weight: .bold))
+//                             .foregroundColor(.white)
+//                         Spacer().frame(height: 24)
+//                         HStack {
+//                             VStack(alignment: .leading) {
+//                                 Text(context.state.team1Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                                 Text(context.state.team2Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                             }
+//                             Spacer()
+//                             VStack(alignment: .trailing) {
+//                                 Text("Score: \(context.state.currentscore)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                                 Text("Wickets: \(context.state.wkts)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                             }
+//                         }.padding(.horizontal)
+//                     }
+//                 }
+//             } compactLeading: {
+//                 Text("\(context.state.currentscore)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.leading, 4)
+//             } compactTrailing: {
+//                 Text("\(context.state.wkts)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.trailing, 4)
+//             } minimal: {
+//                 VStack {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .widgetURL(URL(string: "http://www.apple.com"))
+//             .keylineTint(Color.red)
+//         }
+//     }
+// }
+
+// struct widgetLiveActivity_Previews: PreviewProvider {
+    
+//     static let attributes = widgetAttributes()
+//     static let contentState = widgetAttributes.ContentState(
+//         currentscore: "232",
+//         team1Name: "Team A",
+//         team2Name: "Team B",
+//         wkts: "3"
+//     )
+
+//     static var previews: some View {
+//         Group {
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//                 .previewDisplayName("Island Compact")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//                 .previewDisplayName("Island Expanded")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//                 .previewDisplayName("Minimal")
+//             attributes
+//                 .previewContext(contentState, viewKind: .content)
+//                 .previewDisplayName("Notification")
+//         }
+//     }
+// }
+nt: .leading) {
+//                     Text(context.state.team1Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                     Text(context.state.team2Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                 }
+//                 Spacer()
+//                 VStack(alignment: .trailing) {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .padding(.horizontal)
+//             .activityBackgroundTint(Color.black.opacity(0.5))
+//         } dynamicIsland: { context in
+//             DynamicIsland {
+//                 // Expanded UI
+//                 DynamicIslandExpandedRegion(.center) {
+//                     VStack(alignment: .center) {
+//                         Text("Cricket Match")
+//                             .font(.system(size: 24, weight: .bold))
+//                             .foregroundColor(.white)
+//                         Spacer().frame(height: 24)
+//                         HStack {
+//                             VStack(alignment: .leading) {
+//                                 Text(context.state.team1Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                                 Text(context.state.team2Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                             }
+//                             Spacer()
+//                             VStack(alignment: .trailing) {
+//                                 Text("Score: \(context.state.currentscore)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                                 Text("Wickets: \(context.state.wkts)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                             }
+//                         }.padding(.horizontal)
+//                     }
+//                 }
+//             } compactLeading: {
+//                 Text("\(context.state.currentscore)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.leading, 4)
+//             } compactTrailing: {
+//                 Text("\(context.state.wkts)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.trailing, 4)
+//             } minimal: {
+//                 VStack {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .widgetURL(URL(string: "http://www.apple.com"))
+//             .keylineTint(Color.red)
+//         }
+//     }
+// }
+
+// struct widgetLiveActivity_Previews: PreviewProvider {
+    
+//     static let attributes = widgetAttributes()
+//     static let contentState = widgetAttributes.ContentState(
+//         currentscore: "232",
+//         team1Name: "Team A",
+//         team2Name: "Team B",
+//         wkts: "3"
+//     )
+
+//     static var previews: some View {
+//         Group {
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//                 .previewDisplayName("Island Compact")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//                 .previewDisplayName("Island Expanded")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//                 .previewDisplayName("Minimal")
+//             attributes
+//                 .previewContext(contentState, viewKind: .content)
+//                 .previewDisplayName("Notification")
+//         }
+//     }
+// }
+nt: .leading) {
+//                     Text(context.state.team1Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                     Text(context.state.team2Name)
+//                         .font(.system(size: 20, weight: .semibold))
+//                         .foregroundColor(.white)
+//                 }
+//                 Spacer()
+//                 VStack(alignment: .trailing) {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 24, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .padding(.horizontal)
+//             .activityBackgroundTint(Color.black.opacity(0.5))
+//         } dynamicIsland: { context in
+//             DynamicIsland {
+//                 // Expanded UI
+//                 DynamicIslandExpandedRegion(.center) {
+//                     VStack(alignment: .center) {
+//                         Text("Cricket Match")
+//                             .font(.system(size: 24, weight: .bold))
+//                             .foregroundColor(.white)
+//                         Spacer().frame(height: 24)
+//                         HStack {
+//                             VStack(alignment: .leading) {
+//                                 Text(context.state.team1Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                                 Text(context.state.team2Name)
+//                                     .font(.system(size: 20, weight: .semibold))
+//                                     .foregroundColor(.white)
+//                             }
+//                             Spacer()
+//                             VStack(alignment: .trailing) {
+//                                 Text("Score: \(context.state.currentscore)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                                 Text("Wickets: \(context.state.wkts)")
+//                                     .font(.system(size: 24, weight: .semibold))
+//                                     .foregroundColor(.yellow)
+//                             }
+//                         }.padding(.horizontal)
+//                     }
+//                 }
+//             } compactLeading: {
+//                 Text("\(context.state.currentscore)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.leading, 4)
+//             } compactTrailing: {
+//                 Text("\(context.state.wkts)")
+//                     .font(.system(size: 14, weight: .semibold))
+//                     .foregroundColor(.yellow)
+//                     .padding(.trailing, 4)
+//             } minimal: {
+//                 VStack {
+//                     Text("Score: \(context.state.currentscore)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                     Text("Wickets: \(context.state.wkts)")
+//                         .font(.system(size: 14, weight: .semibold))
+//                         .foregroundColor(.yellow)
+//                 }
+//             }
+//             .widgetURL(URL(string: "http://www.apple.com"))
+//             .keylineTint(Color.red)
+//         }
+//     }
+// }
+
+// struct widgetLiveActivity_Previews: PreviewProvider {
+    
+//     static let attributes = widgetAttributes()
+//     static let contentState = widgetAttributes.ContentState(
+//         currentscore: "232",
+//         team1Name: "Team A",
+//         team2Name: "Team B",
+//         wkts: "3"
+//     )
+
+//     static var previews: some View {
+//         Group {
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//                 .previewDisplayName("Island Compact")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//                 .previewDisplayName("Island Expanded")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//                 .previewDisplayName("Minimal")
+//             attributes
+//                 .previewContext(contentState, viewKind: .content)
+//                 .previewDisplayName("Notification")
+//         }
+//     }
+// }
+
+
+//     static var previews: some View {
+//         Group {
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//                 .previewDisplayName("Island Compact")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//                 .previewDisplayName("Island Expanded")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//                 .previewDisplayName("Minimal")
+//             attributes
+//                 .previewContext(contentState, viewKind: .content)
+//                 .previewDisplayName("Notification")
+//         }
+//     }
+// }
+
+//                 }
+//             }
+//             .widgetURL(URL(string: "http://www.apple.com"))
+//             .keylineTint(Color.red)
+//         }
+//     }
+// }
+
+// struct widgetLiveActivity_Previews: PreviewProvider {
+    
+//     static let attributes = widgetAttributes()
+//     static let contentState = widgetAttributes.ContentState(
+//         currentscore: "232",
+//         team1Name: "Team A",
+//         team2Name: "Team B",
+//         wkts: "3"
+//     )
+
+//     static var previews: some View {
+//         Group {
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//                 .previewDisplayName("Island Compact")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//                 .previewDisplayName("Island Expanded")
+//             attributes
+//                 .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//                 .previewDisplayName("Minimal")
+//             attributes
+//                 .previewContext(contentState, viewKind: .content)
+//                 .previewDisplayName("Notification")
+//         }
+//     }
+// }
+
+//             attributes
+//                 .previewContext(contentState, viewKind: .content)
+//                 .previewDisplayName("Notification")
+//         }
+//     }
+// }
+
 //                         }.padding(.horizontal)
 //                     }
 //                 }
