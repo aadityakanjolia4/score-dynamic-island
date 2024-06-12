@@ -37,37 +37,43 @@ struct widgetLiveActivity: Widget {
                 
             }
             .padding(.horizontal)
-            .activityBackgroundTint(Color.black.opacity(0.5))
+            .activityBackgroundTint(Color.black.opacity(0.5)),
         }dynamicIsland: { context in
             DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
-                DynamicIslandExpandedRegion(.center) {
-                    VStack(alignment: .center) {
-                        Text("StopWatchX")
-                        Spacer().frame(height: 24)
-                        HStack {
-                            Text("Time ellapsed")
-                                .font(.system(size: 20, weight: .semibold))
-                                .foregroundColor(.white)
-                            // Text(context.state.team2Name)
-                           
-                            Spacer()
-                            // Text(context.state.team1Name)
-                            //     .font(.system(size: 24, weight: .semibold))
-                            //     .foregroundColor(.yellow)
-                        }.padding(.horizontal)
+                HStack {
+                        Image(context.attributes.homeTeam)
+                            .teamLogoModifier(frame: 40)
+                            .contentTransition(.identity)
+
+                        Text("context.description")
+                            .font(.title)
+                            .fontWeight(.semibold)
                     }
+            } 
+             DynamicIslandExpandedRegion(.trailing) {
+                    HStack {
+                        Text("context.state.")
+                            .font(.title)
+                            .fontWeight(.semibold)
+
+                       
+                    }
+                }compactLeading:{
+                 HStack {
+                 
+
+                    Text("context.state")
+                        .fontWeight(.semibold)
                 }
-            } compactLeading: {
-                // Text(context.state.currentscore).foregroundColor(.yellow)
-                //     .padding(.trailing, 4)
-                Text("Team 1").foregroundColor(.yellow)
-                    .padding(.trailing, 4)
             } compactTrailing: {
-                Text("Team 2").foregroundColor(.yellow)
-                    .padding(.trailing, 4)
-            } minimal: {
+                HStack {
+                   
+
+                    Text("context.re.description")
+                        .fontWeight(.semibold)
+                } minimal: {
                 Text("K").foregroundColor(.yellow)
                     .padding(.all, 4)
             }
