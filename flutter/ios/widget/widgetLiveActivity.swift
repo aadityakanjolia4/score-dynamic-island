@@ -73,7 +73,8 @@ struct widgetLiveActivity: Widget {
 
                     Text("context.re.description")
                         .fontWeight(.semibold)
-                } minimal: {
+                } 
+                }minimal: {
                 Text("K").foregroundColor(.yellow)
                     .padding(.all, 4)
             }
@@ -82,7 +83,7 @@ struct widgetLiveActivity: Widget {
         }
     }
 }    
-}
+
 
 
 
