@@ -37,42 +37,55 @@ struct widgetLiveActivity: Widget {
                 
             }
             .padding(.horizontal)
-            .activityBackgroundTint(Color.black.opacity(0.5)),
+            .activityBackgroundTint(Color.black.opacity(0.5))
         }dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
-                HStack {
-                        Image(context.attributes.homeTeam)
-                            .teamLogoModifier(frame: 40)
-                            .contentTransition(.identity)
-
-                        Text("context.description")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                    }
-            
-             DynamicIslandExpandedRegion(.trailing) {
-                    HStack {
-                        Text("context.state.")
-                            .font(.title)
-                            .fontWeight(.semibold)
-
-                       
-                    }
-                }
-                }compactLeading:{
+                            // Expanded UI goes here. Compose the expanded UI through
+                            // various regions, like leading/trailing/center/bottom
+                            DynamicIslandExpandedRegion(.leading) {
+                                HStack {
+                                    Text(context.state.currentscore)
+                                        .font(.title)
+                                        .fontWeight(.semibold)
+                                }
+                            }
+                            
+                            DynamicIslandExpandedRegion(.trailing) {
+                                HStack {
+                                    Text(context.state.currentscore)
+                                        .font(.title)
+                                        .fontWeight(.semibold)
+                                }
+                            }
+                            
+                            DynamicIslandExpandedRegion(.center) {
+                                VStack {
+                                    Text("Match between")
+                                        .font(.headline)
+                                    Text("\(context.state.team1Name) vs \(context.state.team2Name)")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            
+                            DynamicIslandExpandedRegion(.bottom) {
+                                HStack {
+                                    Text("Wickets: \(context.state.wkts)")
+                                        .font(.subheadline)
+                                }
+                            }
+                        }compactLeading:{
                  HStack {
                  
 
-                    Text("context.state")
+                    Text(context.state.currentscore)
                         .fontWeight(.semibold)
                 }
             } compactTrailing: {
                 HStack {
                    
 
-                    Text("context.re.description")
+                    Text(context.state.wkts)
                         .fontWeight(.semibold)
                 } 
                 }minimal: {
