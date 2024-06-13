@@ -51,7 +51,7 @@ struct widgetLiveActivity: Widget {
                             .font(.title)
                             .fontWeight(.semibold)
                     }
-            } 
+            
              DynamicIslandExpandedRegion(.trailing) {
                     HStack {
                         Text("context.state.")
@@ -60,6 +60,7 @@ struct widgetLiveActivity: Widget {
 
                        
                     }
+                }
                 }compactLeading:{
                  HStack {
                  
