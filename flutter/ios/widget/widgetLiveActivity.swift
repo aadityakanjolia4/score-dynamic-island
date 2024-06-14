@@ -30,7 +30,7 @@ struct widgetLiveActivity: Widget {
         ActivityConfiguration(for: widgetAttributes.self) { context in
             // Lock screen/banner UI
             HStack {
-                Text("Current time ellapsed")
+                Text("Cricket Match")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(.white)
                     Spacer()
@@ -52,7 +52,7 @@ struct widgetLiveActivity: Widget {
                             
                             DynamicIslandExpandedRegion(.trailing) {
                                 HStack {
-                                    Text(context.state.currentscore)
+                                    Text(context.state.wkts)
                                         .font(.title)
                                         .fontWeight(.semibold)
                                 }
