@@ -6,7 +6,6 @@ import 'dart:async';
 import 'package:aj/dynamic_island_manager.dart';
 import 'package:aj/dynamic_island_stopwatch_data_model.dart';
 
-
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
   @override
@@ -56,11 +55,9 @@ class _MainPageState extends State<MainPage> {
       team2Name = teamNames[1];
 
       // Add match data to the stream
-     
-        // Add match data to the stream
-        _streamController.add(matchData);
-        var score = matchData['livescore'].split('/');
-        if(score.contains('/')){
+      _streamController.add(matchData);
+      var score = matchData['livescore'].split('/');
+      if (score.length == 2) {
         List<String> parts = score;
         String runs = parts[0];
         String wkts = parts[1];
@@ -68,14 +65,12 @@ class _MainPageState extends State<MainPage> {
         List<String> firstPartParts = runs.split(' ');
         String wickets = secondPartParts[0];
         String run = firstPartParts[1];
-        showrun = firstPartParts[1];
+        showrun = run;
         if (int.parse(wickets) > int.parse(prevWickets)) {
           // Vibration.vibrate(); // Vibrate the phone
           prevWickets = wickets;
-          run=run;
         }
-      } 
-
+      }
     } else {
       throw Exception('Failed to load cricket match');
     }
@@ -95,30 +90,24 @@ class _MainPageState extends State<MainPage> {
     }
   }
 
-  // void activityStart(int currentscore, String team1Name, String team2Name, int wkts) {
-  // int currentscore = int.parse(showrun);
-  // String team1Name = this.team1Name;
-  // String team2Name = this.team2Name;
-  // int wkts = int.parse(prevWickets);
-  void activityStart(){
-
+  void activityStart() {
     print("View Score button pressed");
+    print(showrun);
+    print(prevWickets);
     final DynamicIslandManager diManager = DynamicIslandManager(channelKey: 'DI');
     diManager.startLiveActivity(
       jsonData: DynamicIslandStopwatchDataModel(currentscore: showrun, team1Name: team1Name, team2Name: team2Name, wkts: prevWickets).toMap(),
     );
 
     timer = Timer.periodic(const Duration(seconds: 10), (timer) {
-      setState(() {
-      });
-
+      setState(() {});
       // invoking the updateLiveActivity Method
       diManager.updateLiveActivity(
         jsonData: DynamicIslandStopwatchDataModel(
           currentscore: showrun,
-          team1Name:team1Name,
-          team2Name:team2Name,
-          wkts:prevWickets
+          team1Name: team1Name,
+          team2Name: team2Name,
+          wkts: prevWickets,
         ).toMap(),
       );
     });
@@ -168,12 +157,12 @@ class _MainPageState extends State<MainPage> {
                 team1Name = teamNames[0];
                 team2Name = teamNames[1];
                 var score = matchData['livescore'].split('/');
-                if(score.contains('/')){
-                List<String> parts = score;
-                String runs = parts[0];
-                String wkts = parts[1];
-                List<String> secondPartParts = wkts.split(' ');
-                String wickets = secondPartParts[0];
+                if (score.length == 2) {
+                  List<String> parts = score;
+                  String runs = parts[0];
+                  String wkts = parts[1];
+                  List<String> secondPartParts = wkts.split(' ');
+                  String wickets = secondPartParts[0];
                 }
 
                 String team1Asset = team1Name.replaceAll(' ', '') + '.png';
@@ -258,16 +247,14 @@ class _MainPageState extends State<MainPage> {
                               ),
                               SizedBox(height: 20),
                               ElevatedButton(
-                                onPressed: ()
-                                {
-                                 _fetchCricketMatch(currentMatchId).then((_) {
-                                  // Extracted data is available after _fetchCricketMatch completes
-                                  // Call activityStart with extracted data
-                                  activityStart();
-                                  // activityStart(int.parse(showrun), team1Name, team2Name, int.parse(prevWickets));
-                                });
-                              }, // Connect button to activityStart function
-                                                            child: Text("View Score"),
+                                onPressed: () {
+                                  _fetchCricketMatch(currentMatchId).then((_) {
+                                    // Extracted data is available after _fetchCricketMatch completes
+                                    // Call activityStart with extracted data
+                                    activityStart();
+                                  });
+                                }, // Connect button to activityStart function
+                                child: Text("View Score"),
                               ),
                             ],
                           ),
