@@ -15,6 +15,8 @@
 		7B024EE42C0E2E59003986B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		7B024EE52C0E2E59003986B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		7B024EE62C0E588F003986B1 /* widgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A42BF8F0BE00C9D171 /* widgetLiveActivity.swift */; };
+		7B46CABE2CD0FA9300E333F0 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB738932C01C7DF00945841 /* Flutter.xcframework */; };
+		7B46CABF2CD0FA9300E333F0 /* Flutter.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB738932C01C7DF00945841 /* Flutter.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B66689F2BF8F0BD00C9D171 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743C2BEF9F09008FD4D7 /* WidgetKit.framework */; };
 		7B6668A02BF8F0BD00C9D171 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74743E2BEF9F0A008FD4D7 /* SwiftUI.framework */; };
 		7B6668A32BF8F0BE00C9D171 /* widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6668A22BF8F0BD00C9D171 /* widgetBundle.swift */; };
@@ -49,24 +51,25 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		7B74744C2BEF9F3A008FD4D7 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 				7B6668B02BF8F10000C9D171 /* widgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7B46CABF2CD0FA9300E333F0 /* Flutter.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -133,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B46CABE2CD0FA9300E333F0 /* Flutter.xcframework in Frameworks */,
 				7BB738942C01C7DF00945841 /* Flutter.xcframework in Frameworks */,
 				0060A01DE778725893C39540 /* Pods_Runner.framework in Frameworks */,
 			);
@@ -403,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 		B3F97C57C312894ED1B71F1E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -593,7 +597,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -918,7 +922,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -961,7 +965,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
