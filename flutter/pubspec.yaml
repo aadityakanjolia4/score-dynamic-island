@@ -40,6 +40,8 @@ dependencies:
   # url_launcher: ^6.2.4
   web_socket_channel:
   cupertino_http: ^1.4.0
+  firebase_core: ^2.24.2
+  firebase_messaging: ^14.6.7
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +53,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  cupertino_http: ^1.4.0
+  firebase_core: ^2.24.2
+  firebase_messaging: ^14.6.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
