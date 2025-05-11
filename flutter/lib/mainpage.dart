@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
-// import 'package:vibration/vibration.dart';
 import 'package:aj/dynamic_island_manager.dart';
 import 'package:aj/dynamic_island_stopwatch_data_model.dart';
 
@@ -17,29 +16,32 @@ class _MainPageState extends State<MainPage> {
   late String team1Name;
   late String team2Name;
   late Timer timer;
-  late Timer matchIdTimer; // Timer variable declaration
-  int counter = 0; // Counter variable
+  late Timer matchIdTimer;
+  int counter = 0;
   String prevWickets = '0';
   String currentMatchId = '91564';
   String showrun = '0';
+
+  // Custom colors for UI enhancement
+  final Color primaryColor = const Color(0xFF1A237E); // Deep Indigo
+  final Color accentColor = const Color(0xFFFFC107); // Amber
+  final Color backgroundColor = const Color(0xFFF5F5F5); // Light Grey
+  final Color cardColor = Colors.white;
+  final Color textColor = const Color(0xFF212121); // Dark Grey
 
   @override
   void initState() {
     super.initState();
     _streamController = StreamController<Map<String, dynamic>>();
-    // Start the timer when the widget is initialized
     timer = Timer.periodic(Duration(seconds: 10), (Timer t) => _fetchCricketMatch(currentMatchId));
     matchIdTimer = Timer.periodic(Duration(seconds: 10), (Timer t) => _updateMatchId());
-
-    // Fetch match data immediately when the widget is initialized
     _fetchCricketMatch(currentMatchId);
   }
 
   @override
   void dispose() {
-    // Cancel the timer and close the stream controller when the widget is disposed
     timer.cancel();
-    matchIdTimer.cancel(); // Cancel the matchIdTimer
+    matchIdTimer.cancel();
     _streamController.close();
     super.dispose();
   }
@@ -48,13 +50,11 @@ class _MainPageState extends State<MainPage> {
     final response = await http.get(Uri.parse('https://fetch-api-zeta-mauve.vercel.app/score?id=$matchId'));
     if (response.statusCode == 200) {
       Map<String, dynamic> matchData = json.decode(response.body);
-      // Extract team names
       var titleParts = matchData['title'].split(', ');
       var teamNames = titleParts[0].split(' vs ');
       team1Name = teamNames[0];
       team2Name = teamNames[1];
 
-      // Add match data to the stream
       _streamController.add(matchData);
       var score = matchData['livescore'].split('/');
       if (score.length == 2) {
@@ -67,7 +67,6 @@ class _MainPageState extends State<MainPage> {
         String run = firstPartParts[1];
         showrun = run;
         if (int.parse(wickets) > int.parse(prevWickets)) {
-          // Vibration.vibrate(); // Vibrate the phone
           prevWickets = wickets;
         }
       }
@@ -84,7 +83,7 @@ class _MainPageState extends State<MainPage> {
       setState(() {
         this.currentMatchId = currentMatchId;
       });
-      _fetchCricketMatch(currentMatchId); // Fetch data from new matchId
+      _fetchCricketMatch(currentMatchId);
     } else {
       print('Failed to update match ID: ${response.reasonPhrase}');
     }
@@ -101,7 +100,6 @@ class _MainPageState extends State<MainPage> {
 
     timer = Timer.periodic(const Duration(seconds: 10), (timer) {
       setState(() {});
-      // invoking the updateLiveActivity Method
       diManager.updateLiveActivity(
         jsonData: DynamicIslandStopwatchDataModel(
           currentscore: showrun,
@@ -111,171 +109,238 @@ class _MainPageState extends State<MainPage> {
         ).toMap(),
       );
     });
-    // Add any additional functionality here
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[900],
+        backgroundColor: primaryColor,
+        elevation: 0,
         title: Text(
-          "Live Scores",
+          "Live Cricket Scores",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 20,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
           ),
         ),
         centerTitle: true,
         actions: [
-          TextButton(
-            onPressed: () {
-              // Handle login button press
-            },
-            child: Text(
-              'Login',
-              style: TextStyle(fontSize: 18, color: Colors.white),
-            ),
+          IconButton(
+            icon: Icon(Icons.refresh, color: Colors.white),
+            onPressed: () => _fetchCricketMatch(currentMatchId),
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: StreamBuilder<Map<String, dynamic>>(
-            stream: _streamController.stream,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return CircularProgressIndicator();
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              } else if (snapshot.hasData && snapshot.data != null) {
-                var matchData = snapshot.data!;
-                // Extract team names
-                var titleParts = matchData['title'].split(', ');
-                var teamNames = titleParts[0].split(' vs ');
-                team1Name = teamNames[0];
-                team2Name = teamNames[1];
-                var score = matchData['livescore'].split('/');
-                if (score.length == 2) {
-                  List<String> parts = score;
-                  String runs = parts[0];
-                  String wkts = parts[1];
-                  List<String> secondPartParts = wkts.split(' ');
-                  String wickets = secondPartParts[0];
-                }
-
-                String team1Asset = team1Name.replaceAll(' ', '') + '.png';
-                String team2Asset = team2Name.replaceAll(' ', '') + '.png';
-
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: Offset(0, 3), // changes position of shadow
-                            ),
-                          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: StreamBuilder<Map<String, dynamic>>(
+              stream: _streamController.stream,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(accentColor),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        team1Name,
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black),
-                                      ),
-                                      SizedBox(height: 8),
-                                      Image.asset(
-                                        'images/$team1Asset',
-                                        width: 100,
-                                        height: 100,
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        team2Name,
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black),
-                                      ),
-                                      SizedBox(height: 8),
-                                      Image.asset(
-                                        'images/$team2Asset',
-                                        width: 100,
-                                        height: 100,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 20),
-                              Text(
-                                matchData['update'] ?? 'Update Not Found',
-                                style: TextStyle(fontSize: 18, color: Colors.black),
-                              ),
-                              SizedBox(height: 20),
-                              Text(
-                                matchData['livescore'] ?? 'Live Score Not Found',
-                                style: TextStyle(fontSize: 18, color: Colors.black),
-                              ),
-                              SizedBox(height: 20),
-                              Text(
-                                'Counter: $counter', // Display the counter value
-                                style: TextStyle(fontSize: 18, color: Colors.black),
-                              ),
-                              SizedBox(height: 20),
-                              ElevatedButton(
-                                onPressed: () {
-                                  _fetchCricketMatch(currentMatchId).then((_) {
-                                    // Extracted data is available after _fetchCricketMatch completes
-                                    // Call activityStart with extracted data
-                                    activityStart();
-                                  });
-                                }, // Connect button to activityStart function
-                                child: Text("View Score"),
-                              ),
-                            ],
+                        SizedBox(height: 16),
+                        Text(
+                          'Loading match data...',
+                          style: TextStyle(
+                            color: textColor,
+                            fontSize: 16,
                           ),
                         ),
+                      ],
+                    ),
+                  );
+                } else if (snapshot.hasError) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.error_outline, size: 48, color: Colors.red),
+                        SizedBox(height: 16),
+                        Text(
+                          'Error loading match data',
+                          style: TextStyle(color: Colors.red),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 16),
+                        ElevatedButton(
+                          onPressed: () => _fetchCricketMatch(currentMatchId),
+                          child: Text('Retry'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: primaryColor,
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                } else if (snapshot.hasData && snapshot.data != null) {
+                  var matchData = snapshot.data!;
+                  var titleParts = matchData['title'].split(', ');
+                  var teamNames = titleParts[0].split(' vs ');
+                  team1Name = teamNames[0];
+                  team2Name = teamNames[1];
+
+                  String team1Asset = team1Name.replaceAll(' ', '') + '.png';
+                  String team2Asset = team2Name.replaceAll(' ', '') + '.png';
+
+                  return Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          LayoutBuilder(
+                            builder: (context, constraints) {
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Expanded(
+                                    flex: 2,
+                                    child: _buildTeamColumn(team1Name, team1Asset),
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Center(
+                                      child: Text(
+                                        'VS',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          color: accentColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 2,
+                                    child: _buildTeamColumn(team2Name, team2Asset),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                          SizedBox(height: 24),
+                          Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: primaryColor.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  matchData['livescore'] ?? 'Live Score Not Found',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: primaryColor,
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Text(
+                                  matchData['update'] ?? 'Update Not Found',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: textColor,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 24),
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              _fetchCricketMatch(currentMatchId).then((_) {
+                                activityStart();
+                              });
+                            },
+                            icon: Icon(Icons.sports_cricket),
+                            label: Text("View Live Score"),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: accentColor,
+                              foregroundColor: Colors.black,
+                              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                );
-              } else {
-                return Text('No match data available');
-              }
-            },
+                    ),
+                  );
+                } else {
+                  return Center(
+                    child: Text(
+                      'No match data available',
+                      style: TextStyle(
+                        color: textColor,
+                        fontSize: 16,
+                      ),
+                    ),
+                  );
+                }
+              },
+            ),
           ),
         ),
       ),
     );
   }
-}
 
-void main() {
-  runApp(MaterialApp(
-    home: MainPage(),
-  ));
+  Widget _buildTeamColumn(String teamName, String assetName) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: primaryColor.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Image.asset(
+            'images/$assetName',
+            width: 60,
+            height: 60,
+            errorBuilder: (context, error, stackTrace) {
+              return Icon(
+                Icons.sports_cricket,
+                size: 60,
+                color: primaryColor,
+              );
+            },
+          ),
+        ),
+        SizedBox(height: 8),
+        Text(
+          teamName,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: textColor,
+          ),
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
+    );
+  }
 }
